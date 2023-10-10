@@ -18,21 +18,21 @@ class Texture(object):
     data = self.f.read(slen)
     self.meta = hdrdata + data
 
-    idx = data.index("\0")
+    idx = data.index("b\0")
     if idx != -1:
       self.ddsname = data[:idx]
       self.extra = data[idx+1:]
 
   def list_files(self, options):
-    print "Header: %u bytes" % len(self.meta)
-    print " Dimensions: %ux%u" % (self.width, self.height)
-    print " Extra data: %u bytes" % len(self.extra)
-    print "File: %s" % self.ddsname
+    print ("Header: %u bytes" % len(self.meta))
+    print (" Dimensions: %ux%u" % (self.width, self.height))
+    print (" Extra data: %u bytes" % len(self.extra))
+    print ("File: %s" % self.ddsname)
 
   def extract_file(self, options):
     name = self.ddsname
     if not options.quiet and not options.pipe:
-      print "Extracting %s..." % name
+      print ("Extracting %s..." % name)
     self.f.seek(self.offset)
     data = self.f.read()
     if options.pipe:
