@@ -1,3 +1,6 @@
+Coh Tools
+=====
+
 Command-line tools to read City of Heroes PIGG files.
 
 Requirements: Python 2.x, with the zlib module.
