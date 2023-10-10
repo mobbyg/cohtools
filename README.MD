@@ -30,6 +30,7 @@ readtexture
 -----------
 
 Note: Updated for Python 3.x
+
 To convert a .texture file, you can use:
 
 python readtexture.py file.texture
